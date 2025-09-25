@@ -1,23 +1,18 @@
 import React from "react";
+import { type ButtonProps } from "@/interfaces";
 
-interface ButtonProps {
-  label: string;
-  onClick?: () => void;
-  type?: "button" | "submit" | "reset";
-  className?: string;
-}
+export default function Button({ label, size, shape, onClick }: ButtonProps) {
+  // Classes based on size
+  const sizeClasses: Record<string, string> = {
+    small: "px-2 py-1 text-sm",
+    medium: "px-4 py-2 text-base",
+    large: "px-6 py-3 text-lg",
+  };
 
-export default function Button({
-  label,
-  onClick,
-  type = "button",
-  className = "",
-}: ButtonProps) {
   return (
     <button
-      type={type}
+      className={`bg-blue-500 text-white ${sizeClasses[size]} ${shape} hover:bg-blue-600 transition`}
       onClick={onClick}
-      className={`px-4 py-2 rounded text-white bg-blue-600 hover:bg-blue-700 transition ${className}`}
     >
       {label}
     </button>
