@@ -1,14 +1,19 @@
 import React from "react";
-import Header from "../components/layout/Header";
+import Button from "@/components/common/Button";
 
 export default function AboutPage() {
+  const handleClick = () => {
+    alert("Welcome to the About page!");
+  };
+
   return (
-    <div>
-      <Header />
-      <main className="p-6 text-center">
-        <h1 className="text-3xl font-bold text-purple-600">About This Project</h1>
-        <p className="mt-4 text-lg">This page tells you more about what we are building.</p>
-      </main>
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4">About Us</h1>
+      <p className="mb-4">
+        This is the About page for our Next.js project. We are building reusable
+        components to keep our code clean and organized.
+      </p>
+      <Button label="Click Me" onClick={handleClick} />
     </div>
   );
 }
