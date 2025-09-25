@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "@/components/layout/Header";
 import Card from "@/components/common/Card";
 import PostModal from "@/components/common/PostModal";
+import Button from "@/components/common/Button";
 
 export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,12 +19,11 @@ export default function HomePage() {
     <div>
       <Header />
       <main className="p-6">
-        <button
+        <Button
+          label="Add New Post"
           onClick={() => setIsModalOpen(true)}
-          className="mb-4 bg-green-600 text-white px-4 py-2 rounded"
-        >
-          Add New Post
-        </button>
+          className="mb-4 bg-green-600"
+        />
 
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post, index) => (
