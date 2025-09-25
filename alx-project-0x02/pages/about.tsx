@@ -1,3 +1,4 @@
+import Header from "@/components/layout/Header";
 import React from "react";
 import Button from "@/components/common/Button";
 
@@ -13,7 +14,7 @@ export default function AboutPage() {
         This is the About page for our Next.js project. We are building reusable
         components to keep our code clean and organized.
       </p>
-      <Button label="Click Me" onClick={handleClick} />
+      <Button label="Click Me" size="medium" shape="rounded-md" onClick={handleClick} />
     </div>
   );
 }
@@ -24,3 +25,7 @@ export interface ButtonProps {
   shape: "rounded-sm" | "rounded-md" | "rounded-full";
   onClick?: () => void;
 }
+
+<><Header /><div className="p-6">
+  {/* Page Content */}
+</div></>
